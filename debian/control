@@ -4,9 +4,10 @@ Priority: extra
 Maintainer: Bill Gatliff <bgat@billgatliff.com>
 Build-Depends: debhelper (>= 9)
 Standards-Version: 3.9.5
+Vcs-Git: https://github.com/bgat/macsum.git
 
 Package: macsum
-Architecture: all
+Architecture: any
 Depends: ${misc:Depends}
 Description: Ethernet MAC from text string
  Creates an Ethernet MAC from a text string hashed with djb2.

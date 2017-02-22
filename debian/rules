@@ -1,6 +1,13 @@
 #!/usr/bin/make -f
+# https://www.debian.org/doc/manuals/maint-guide/dreq.en.html
+# https://wiki.debian.org/CrossBuildPackagingGuidelines
+
+DH_VERBOSE = 1
+export DH_OPTIONS=-v
 
 include /usr/share/dpkg/architecture.mk
+DPKG_EXPORT_BUILDFLAGS = 1
+include /usr/share/dpkg/default.mk
 
 ifeq ($(origin CC),default)
 	CC := $(DEB_HOST_GNU_TYPE)-gcc
