@@ -1,4 +1,13 @@
 #!/usr/bin/make -f
 
+include /usr/share/dpkg/architecture.mk
+
+ifeq ($(origin CC),default)
+	CC := $(DEB_HOST_GNU_TYPE)-gcc
+endif
+
+override_dh_auto_build:
+	    $(MAKE) CC=$(CC)
+
 %:
 	dh $@ 
